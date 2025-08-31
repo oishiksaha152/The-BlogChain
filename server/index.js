@@ -8,11 +8,18 @@
     const userRoutes = require('./routes/userRoutes')
     const postRoutes = require('./routes/postRoutes')
     const { notFound, errorHandler } = require('./middleware/errorMiddleware')
+    const allowedOrigins = [
+  "http://localhost:3000",
+  "https://the-blogchain-frontend.vercel.app"  // replace with your actual frontend URL
+];
 
     const app = express()
     app.use(express.json({ extended: true }))
     app.use(express.urlencoded({ extended: true }))
-    app.use(cors({ credentials: true, origin: "http://localhost:3000" }))
+    app.use(cors({
+  credentials: true,
+  origin: allowedOrigins
+})); 
     app.use(upload())
     app.use('/uploads', express.static(__dirname + '/uploads'))
 
