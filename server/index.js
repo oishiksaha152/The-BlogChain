@@ -10,7 +10,7 @@
     const { notFound, errorHandler } = require('./middleware/errorMiddleware')
     const allowedOrigins = [
   "http://localhost:3000",
-  "https://the-blogchain-frontend.vercel.app"  // replace with your actual frontend URL
+  "https://the-blogchain-1.onrender.com"  // replace with your actual frontend URL
 ];
 
     const app = express()
